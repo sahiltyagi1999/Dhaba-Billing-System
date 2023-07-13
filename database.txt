@@ -1,0 +1,5 @@
+ 1 Chilly Chicken 180 10
+ 2 Chilli Paneer  130 10
+ 3 Biriyani 180 25
+ 4 Tea 12 0
+ 5 Pyaaz Pakode 80 0
