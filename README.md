@@ -1,67 +1,94 @@
-AVON DHABA
-A C++ console application that allows an administrator to manage products in a database and buyers to purchase products.
+Avon Dhaba Shopping Application
 
-Table of Contents
-Description
-Features
-Installation
-Usage
-License
-Contributing
-Description
-AVON DHABA is a simple command-line based shopping application. It provides functionalities for an administrator to add, edit, and delete products, and for buyers to view the list of products and purchase them.
+Overview
+
+This C++ application is a basic console-based shopping system called "Avon Dhaba". It allows administrators to manage products by adding, editing, or removing items from a product list stored in a file. Buyers can view available products and generate receipts for their purchases.
 
 Features
-Administrator Menu
 
-Login with email and password
-Add new products
-Edit existing products
-Remove products
-View product list
-Buyer Menu
+ 1.Administrator
+ 2.Login Authentication: Access to the administrator menu requires email and password validation.
+3.Add Product: Administrators can add new products to the inventory.
+4.Edit Product: Modify details of existing products.
+5.Remove Product: Delete products from the inventory.
+6.Buyer
+7.View Products: Buyers can view the list of available products.
+8.Purchase Products: Buyers can add products to their cart and generate a receipt with the total amount and discount applied.
 
-View product list
-Purchase products and generate a receipt
-Installation
-Clone the repository
+Project Structure
+-Class shopping: Contains private member variables for product details and public member functions for the main functionalities.
 
-sh
-Copy code
-git clone https://github.com/your-username/avon-dhaba.git
-cd avon-dhaba
-Compile the code
+Private Members:
+- int pcode: Product code.
+- float price: Product price.
+- float dis: Product discount.
+- string pname: Product name.
 
-Make sure you have a C++ compiler installed. Then, compile the code using:
+Public Member Functions:
 
-sh
-Copy code
-g++ -o avon_dhaba main.cpp
-Run the application
+- void menu(): Displays the main menu and handles user choice.
+- void administrator(): Displays the administrator menu.
+- void buyer(): Displays the buyer menu.
+- void add(): Adds a new product to the inventory
+- void edit(): Edits an existing product in the inventory.
+- void rem(): Removes a product from the inventory.
+- void list(): Lists all available products.
+- void receipt(): Generates a receipt for the buyer's purchases.
 
-sh
-Copy code
-./avon_dhaba
+File Handling
+
+- Database File (database.txt): Stores product details in the format pcode pname price dis.
+- Temporary Database File (database1.txt): Used during the editing and removal of products to temporarily store updated data.
+
 Usage
-Menu Navigation
 
-On running the application, you will see the main menu with options for Administrator and Buyer.
-Select 1 for Administrator or 2 for Buyer.
-Administrator Login
+- Running the Application
 
-Enter email: t.sahil@iitg.ac.in
-Enter password: 123456789
-Administrator Functionalities
+   Compile the Program:
+g++ shopping.cpp -o shopping
 
-Add, edit, or remove products using the options provided in the Administrator menu.
-Products are stored in a file named database.txt.
-Buyer Functionalities
+- Run the Program:
 
-View the list of available products.
-Purchase products by entering the product code and quantity.
-A receipt will be generated with the total amount including discounts.
-License
-This project is licensed under the MIT License.
+./shopping
 
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request for any changes or enhancements.
+- Administrator Login
+Email: t.sahil@iitg.ac.in
+Password: 123456789
+
+- Sample Execution
+
+On running the program, you will be presented with the main menu.
+Choose 1 for Administrator or 2 for Buyer.
+Administrator can manage products, while Buyers can view and purchase products.
+
+
+
+Main Menu:
+
+1) Administrator
+2) Buyer
+3) Exit
+
+Administrator Menu:
+
+1) Add the product
+2) Modify the product
+3) Delete the product
+4) Back to Main menu
+   
+Buyer Menu:
+
+1) Buy Product
+2) Go Back
+
+   
+Receipt Example:
+
+
+Product No    Prod.name     quantity    Price    Amount    Amount with discount
+1             Bread         2           30.0     60.0      54.0
+Notes
+Ensure the database.txt file exists in the same directory as the executable.
+The application uses basic file handling and does not implement advanced error handling or data validation.
+Contact
+For any queries or issues, please contact Sahil Tyagi at t.sahil@iitg.ac.in.
